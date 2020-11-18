@@ -1,6 +1,6 @@
 # Teste Ruby on Rails Jr. - Suporte e Manutenção
 
-Seu desafio será desenvolver uma aplicação de cadastro de placas de carros,como parte dele, veremos como você estrutura as camadas de aplicação, legibilidade do código e documentação.
+Seu desafio será desenvolver uma aplicação de cadastro de placas de carros, como parte dele, veremos como você estrutura as camadas de aplicação, legibilidade do código e documentação.
 
 ### Solução
 
