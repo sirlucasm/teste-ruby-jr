@@ -1,4 +1,4 @@
-# Teste Ruby on Rails Jr. - Suporte e Manutenção
+# Teste Ruby on Rails Jr.
 
 Seu desafio será desenvolver uma aplicação de cadastro de placas de carros, como parte dele, veremos como você estrutura as camadas de aplicação, legibilidade do código e documentação.
 
