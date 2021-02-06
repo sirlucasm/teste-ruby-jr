@@ -31,3 +31,7 @@
 
 en:
   hello: "Hello world"
+  code: "Placa"
+  model: "Modelo"
+  owner: "Proprietário"
+  year: "Ano"

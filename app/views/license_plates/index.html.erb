@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<div class="header-area">
+  <h1>Placas de carro</h1>
+</div>
+
+<% if @license_plates.length > 0 %>
+  <div class="content-area">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col"><%= I18n.t 'code' %></th>
+          <th scope="col"><%= I18n.t 'owner' %></th>
+          <th scope="col"><%= I18n.t 'model' %></th>
+          <th scope="col"><%= I18n.t 'year' %></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @license_plates.each do |license_plate| %>
+          <tr>
+            <td scope="row"><%= license_plate.id %></td>
+            <td scope="row"><%= license_plate.code %></td>
+            <td scope="row"><%= license_plate.owner %></td>
+            <td scope="row"><%= license_plate.model %></td>
+            <td scope="row"><%= license_plate.year %></td>
+            <td><%= link_to 'Ver', license_plate, class: "btn btn-warning" %></td>
+            <td><%= link_to 'Editar', edit_license_plate_path(license_plate), class: "btn btn-primary" %></td>
+            <td><%= link_to 'Excluir', license_plate, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <div>
+    <div class="no-license-plate">
+      <p><strong>Nenhuma placa cadastrada</strong></p>
+    </div>
+  </div>
+<% end %>
+<br>
+
+<div class="button-area">
+  <%= link_to 'Cadastrar Nova Placa', new_license_plate_path, class: 'btn btn-success' %>
+</div>

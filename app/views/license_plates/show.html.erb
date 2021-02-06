@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="card custom-card">
+  <div class="card-body">
+    <h5 class="card-title">PLACA #<%= @license_plate.id %></h5>
+    <p class="card-text">
+      <strong><%= I18n.t 'code' %>:</strong>
+      <%= @license_plate.code %>
+    </p>
+
+    <p class="card-text">
+      <strong><%= I18n.t 'owner' %>:</strong>
+      <%= @license_plate.owner %>
+    </p>
+
+    <p class="card-text">
+      <strong><%= I18n.t 'model' %>:</strong>
+      <%= @license_plate.model %>
+    </p>
+
+    <p class="card-text">
+      <strong><%= I18n.t 'year' %>:</strong>
+      <%= @license_plate.year %>
+    </p>
+  </div>
+</div>
+
+<%= link_to 'Editar', edit_license_plate_path(@license_plate), class: 'btn btn-primary', style: 'margin: 20px 0;' %> |
+<%= link_to 'Voltar', '/', class: 'btn btn-default' %>

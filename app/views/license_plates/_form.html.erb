@@ -1,0 +1,47 @@
+<%= form_with(model: license_plate) do |form| %>
+  <% if license_plate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(license_plate.errors.count, "error") %> prohibited this license_plate from being saved:</h2>
+
+      <ul>
+        <% license_plate.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <%= form.label I18n.t 'code' %>
+      <%= form.text_field :code, required: true, class: 'form-control', maxlength: 7 %>
+    </div>
+
+    <div class="input-group-prepend">
+      <%= form.label I18n.t 'owner' %>
+      <%= form.text_field :owner, class: 'form-control', maxlength: 50, size: 10 %>
+    </div>
+
+    <div class="input-group-prepend">
+      <%= form.label I18n.t 'model' %>
+      <%= form.text_field :model, required: true, class: 'form-control', maxlength: 10 %>
+    </div>
+
+    <div class="input-group-prepend">
+      <%= form.label I18n.t 'year' %>
+      <%= form.number_field :year, required: true, class: 'form-control', onkeypress: 'verifyYear(this)', max: 2021 %>
+    </div>
+
+    <div class="input-group-prepend my-4">
+      <button id="buttonSubmit"  type="submit" style="margin: 30px 0 10px 0;" class="btn btn-primary">Cadastrar</button>
+    </div>
+  </div>
+<% end %>
+
+<script>
+  function verifyYear(event) {
+    const submitButton = document.getElementById('buttonSubmit');
+    if(event.value.length === 4 ) event.setAttribute('readonly', 'true');
+    if(event.value > 2021 ) submitButton.setAttribute('disabled', 'true');
+  }
+</script>
